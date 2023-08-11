@@ -39,6 +39,19 @@ export default {
     },
   },
 
+  build: [
+    {
+      src: "src/index.js",
+      use: "@vercel/node",
+    },
+  ],
+  routes: [
+    {
+      src: "/(.*)",
+      dest: "src/index.js",
+    },
+  ],
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
