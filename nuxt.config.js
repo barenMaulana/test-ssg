@@ -15,7 +15,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/main.css"],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -39,38 +39,6 @@ export default {
     },
   },
 
-  builds: [
-    {
-      src: "nuxt.config.js",
-      use: "@nuxtjs/now-builder",
-      config: {
-        serverFiles: ["package.json"],
-      },
-    },
-  ],
-
-  routes: [
-    { src: "/_nuxt/.+", headers: { "Cache-Control": "max-age=31557600" } },
-    {
-      src: "/sw.js",
-      dest: "/_nuxt/static/sw.js",
-      headers: {
-        "cache-control": "public, max-age=43200, immutable",
-        "Service-Worker-Allowed": "/",
-      },
-    },
-    { src: "/(.*)", dest: "/" },
-  ],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
-    },
-  },
+  build: {},
 };
